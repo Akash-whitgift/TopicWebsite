@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styledarknewcard.css">
+        <var>userpreference = true</var>
+        
+       <title> settings </title>
+       
+    </head>
+    <body>
+        
+        <div id="particles-js">
+            <div class="positioningui">
+            <div class="card">
+            
+                <p>Disable animated Background</p>
+                <p><label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                
+            </label></p>
+            
+            </div>
+            <p></p>
+            <div class="cardh">
+            
+                <p>Show FPS counter (developer)</p>
+                <p><label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                
+            </label></p>
+            
+            </div>
+            </div>
+        </div>
+        <script src="particles.js"></script>
+        <script src="app.js"></script>
+        <div class="count-particles">
+  <span class="js-count-particles">--</span>
+<script src=""></script>
+<script>
+    var count_particles, stats, update;
+    stats = new Stats;
+    stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function() {
+      stats.begin();
+      stats.end();
+      if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+      }
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  </script>
+</div>
+    </body>
+</html>
